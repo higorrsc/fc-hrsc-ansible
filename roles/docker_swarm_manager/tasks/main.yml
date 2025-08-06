@@ -1,0 +1,16 @@
+---
+# tasks file for docker_swarm_manager
+- name: Initialize Docker Swarm
+  block:
+    - name: Ensure Swarm is initialized
+      community.docker.docker_swarm:
+        state: present
+        advertise_addr: "{{ ansible_host }}"
+
+    - name: Get Swarm info
+      community.docker.docker_swarm_info:
+      register: swarm_info
+
+    - name: Display Join Token
+      debug:
+        msg: "Join Token: {{ swarm_info.swarm_facts.JoinTokens.Worker }}"
