@@ -1,7 +1,9 @@
-[servers]
-54.204.123.72
-34.228.242.76
+[manager]
 3.94.212.74
+
+[workers]
+34.228.242.76
+54.204.123.72
 
 [all:vars]
 ansible_ssh_private_key_file=/home/higorrsc/devdisk/courses/fullcycle/v.3/ansible/fc-hrsc-ansible.pem
