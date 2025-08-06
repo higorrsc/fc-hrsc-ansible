@@ -11,6 +11,12 @@
         name:
           - ca-certificates
           - curl
+          - gnupg
+          - lsb-release
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+          - python3-docker
         state: present
 
     - name: Create directory for keyrings
