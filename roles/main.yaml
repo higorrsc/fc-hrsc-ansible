@@ -1,7 +1,13 @@
 ---
-- hosts: all
+# - hosts: all
+#   remote_user: ubuntu
+#   become: true
+#   roles:
+#     # - install_nginx
+#     # - install_docker
+
+- hosts: manager
   remote_user: ubuntu
   become: true
   roles:
-    # - install_nginx
-    - install_docker
+    - docker_swarm_manager
