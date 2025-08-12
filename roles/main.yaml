@@ -4,21 +4,22 @@
   become: true
   roles:
     - install_libs
-    # - install_docker
-# - hosts: manager
-#   remote_user: ubuntu
-#   become: true
-#   roles:
-#     - docker_swarm_manager
+    - install_docker
 
-# - hosts: workers
-#   remote_user: ubuntu
-#   become: true
-#   roles:
-#     - docker_swarm_worker
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+    - docker_swarm_manager
 
-# - hosts: manager
-#   remote_user: ubuntu
-#   become: true
-#   roles:
-#     - deploy_stack
+- hosts: workers
+  remote_user: ubuntu
+  become: true
+  roles:
+    - docker_swarm_worker
+
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+    - deploy_stack
