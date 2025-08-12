@@ -11,3 +11,9 @@
   become: true
   roles:
     - docker_swarm_manager
+
+- hosts: workers
+  remote_user: ubuntu
+  become: true
+  roles:
+    - docker_swarm_worker

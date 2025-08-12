@@ -1,0 +1,10 @@
+---
+# tasks file for docker_swarm_worker
+- name: Join Docker Swarm
+  block:
+    - name: Ensure Swarm is joined
+      community.docker.docker_swarm:
+        state: join
+        advertise_addr: "{{ ansible_host }}"
+        join_token: "{{ hostvars[groups['manager'][0]].swarm_info.swarm_facts.JoinTokens.Worker }}"
+        remote_addrs: "{{ hostvars[groups['manager'][0]].ansible_default_ipv4.address }}"
