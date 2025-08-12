@@ -28,3 +28,8 @@
   npm:
     path: /app
     state: present
+
+- name: Copy index.js
+  template:
+    src: index.js.j2
+    dest: /app/index.js
