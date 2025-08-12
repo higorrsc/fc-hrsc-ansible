@@ -2,3 +2,4 @@
 .ansible/
 *.pem
 .venv/
+node_modules/

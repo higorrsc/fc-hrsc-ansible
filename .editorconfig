@@ -48,3 +48,9 @@ insert_final_newline = false
 [**/__pycache__/**]
 trim_trailing_whitespace = false
 insert_final_newline = false
+
+[*.{js,ts,jsx,ts,tsx}]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
