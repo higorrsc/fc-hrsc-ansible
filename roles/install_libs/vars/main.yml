@@ -1,3 +1,4 @@
 ---
 # vars file for install_libs
 hello_fullcycle: "Hello Full Cycle, by Higor Cruz"
+url_app: "http://localhost:3002"
