@@ -17,3 +17,9 @@
   become: true
   roles:
     - docker_swarm_worker
+
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+    - deploy_stack

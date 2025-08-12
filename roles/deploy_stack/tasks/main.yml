@@ -1,0 +1,19 @@
+---
+# tasks file for deploy_stack
+- name: Install jsondiff on remote manager
+  pip:
+    name: jsondiff
+    executable: pip3
+    extra_args: --break-system-packages
+
+- name: Copy Docker Compose to remote host
+  ansible.builtin.copy:
+    src: files/compose.yaml
+    dest: /opt/compose.yaml
+  become: true
+
+- name: Deploy Docker stack
+  community.docker.docker_stack:
+    state: present
+    name: app
+    compose: "/opt/compose.yaml"
