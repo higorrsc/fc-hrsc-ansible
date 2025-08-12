@@ -12,12 +12,14 @@
         "hostvars",
         "hrsc",
         "indentação",
+        "jsondiff",
         "keyrings",
         "Makefiles",
         "nginx",
         "pycache",
         "setuptools",
         "venv",
-        "virtualenv"
+        "virtualenv",
+        "wesleywillians"
     ]
 }
