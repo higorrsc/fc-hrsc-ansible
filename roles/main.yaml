@@ -1,25 +1,24 @@
 ---
-# - hosts: all
+- hosts: all
+  remote_user: ubuntu
+  become: true
+  roles:
+    - install_libs
+    # - install_docker
+# - hosts: manager
 #   remote_user: ubuntu
 #   become: true
 #   roles:
-#     # - install_nginx
-#     # - install_docker
+#     - docker_swarm_manager
 
-- hosts: manager
-  remote_user: ubuntu
-  become: true
-  roles:
-    - docker_swarm_manager
+# - hosts: workers
+#   remote_user: ubuntu
+#   become: true
+#   roles:
+#     - docker_swarm_worker
 
-- hosts: workers
-  remote_user: ubuntu
-  become: true
-  roles:
-    - docker_swarm_worker
-
-- hosts: manager
-  remote_user: ubuntu
-  become: true
-  roles:
-    - deploy_stack
+# - hosts: manager
+#   remote_user: ubuntu
+#   become: true
+#   roles:
+#     - deploy_stack

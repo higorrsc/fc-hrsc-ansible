@@ -1,0 +1,30 @@
+---
+# tasks file for install_libs
+- name: Install libs
+  apt:
+    pkg:
+      - nginx
+      - nodejs
+      - npm
+    state: present
+    update_cache: yes
+
+- name: Start nginx service
+  service:
+    name: nginx
+    state: started
+
+- name: Create dir /app
+  file:
+    path: /app
+    state: directory
+
+- name: Copy package.json
+  copy:
+    src: package.json
+    dest: /app/package.json
+
+- name: Install npm
+  npm:
+    path: /app
+    state: present
